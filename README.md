@@ -14,3 +14,9 @@ where ethx is the device you want to listen to. Such as `en0`.
 ```bash
 lsof -Pni4 | grep LISTEN
 ```
+
+##### Find out what DNS provider someone is using
+```bash
+dig NS <<<domain>>>
+whois $(dig +short A <<<nameserver>>>) | fgrep Org
+```
