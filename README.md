@@ -20,3 +20,8 @@ lsof -Pni4 | grep LISTEN
 dig NS <<<domain>>>
 whois $(dig +short A <<<nameserver>>>) | fgrep Org
 ```
+
+##### Determine what version of BIND a DNS server is using (if applicable)
+```bash
+dig -t txt -c chaos VERSION.BIND @<<<nameserver>>>
+```
