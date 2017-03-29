@@ -17,8 +17,7 @@ lsof -Pni4 | grep LISTEN
 
 ##### Find out what DNS provider someone is using
 ```bash
-dig NS <<<domain>>>
-whois $(dig +short A <<<nameserver>>>) | fgrep Org
+dig +short ns <<<domain>>> | xargs -n1 dig +short | xargs -n1 whois | grep OrgName | tr -s ' ' | cut -c10- | sort -u
 ```
 
 ##### Determine what version of BIND a DNS server is using (if applicable)
