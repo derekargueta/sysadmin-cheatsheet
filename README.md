@@ -24,3 +24,8 @@ dig +short ns <<<domain>>> | xargs -n1 dig +short | xargs -n1 whois | grep OrgNa
 ```bash
 dig -t txt -c chaos VERSION.BIND @<<<nameserver>>>
 ```
+
+##### Count number of lines recursively in directory
+```bash
+find . -name '*.php' | xargs wc -l
+```
