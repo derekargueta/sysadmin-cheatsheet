@@ -29,3 +29,10 @@ dig -t txt -c chaos VERSION.BIND @<<<nameserver>>>
 ```bash
 find . -name '*.php' | xargs wc -l
 ```
+
+
+##### Get plain diff with subset files
+```bash
+diff -ibwB --unchanged-line-format= --old-line-format= --new-line-format='%L' --suppress-common-lines file1 file2 > file2
+```
+file3 will only contain the items that are in file2 but not in file1 assuming that file1 is a sorted subset of file2
